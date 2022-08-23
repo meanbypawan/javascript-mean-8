@@ -1,0 +1,30 @@
+<script>
+  // Logical Operator
+ // To join multiple conditions
+ // && (AND), || (OR)
+ /*
+    A       B       A&&B              A||B
+   (a>b)   (c<d)    (a>b) && (c<d)   (a>b)||(c<d)
+   -----------------------------------------------
+    true    false   false           true           
+    false   true    false           true
+    true    true    true            true    
+    false   false   false           false
+
+ */
+  var a =10;
+  var b = 20;
+  var c =30;
+  var d = 40;
+  // ++c --> c = c + 1
+  //var x = (a < b) && (++c < d);
+  var x = (a < b) || (++c < d);
+  document.write("<br>a : "+a);
+  document.write("<br>b : "+b);
+  document.write("<br>c : "+c);
+  document.write("<br>d : "+d);
+  document.write("<br>x : "+x);  
+</script>
+
+
+
