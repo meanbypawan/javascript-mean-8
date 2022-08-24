@@ -1,0 +1,37 @@
+<script>
+    /*
+      1. DRY (Do not repeat yourself)
+      2. KISS (Kepp it simple & short)
+    */
+    var basicSalary = prompt('Enter a basic salary');
+ 
+    if((!basicSalary) || isNaN(basicSalary)){
+        document.write("Invalid input");
+    }
+    else{
+       basicSalary *= 1; // basicSlaary = basicSalary*1 
+       var hra,ta,da,gs;
+       if(basicSalary > 10000){
+          hra = (basicSalary*10)/100;
+          ta = (basicSalary*5)/100;
+          da = (basicSalary*3)/100;
+       }
+       else{
+          hra = (basicSalary*5)/100;
+          ta = (basicSalary*3)/100;
+          da = 0;
+        }
+       var gs = basicSalary + hra + ta + da;
+       document.write("<br>HRA : "+hra);
+       document.write("<br>TA : "+ta);
+       if(da)
+        document.write("<br>DA : "+da);
+       document.write("<br>Gross Salary : "+gs);
+       
+    }
+ </script>
+ 
+ 
+ 
+ 
+ 

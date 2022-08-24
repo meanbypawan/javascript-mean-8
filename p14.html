@@ -1,0 +1,56 @@
+<script>
+   /* 
+    document.write("<br>"+(undefined == undefined));
+    document.write("<br>"+(null == null));
+    document.write("<br>"+(NaN == NaN));
+    document.write("<br>"+typeof(NaN));
+   */
+  /*
+    WAP to enter basic salary of an employee
+    if basic salary is greater then 10000
+    then hra =10%, ta=5% and da=3% of basic salary is
+    givent to the employee otherwise
+    hra = 5% and ta=3% is given to the employee.
+    Calculate gross salary
+    
+    */
+   var basicSalary = prompt('Enter a basic salary');
+
+   if((!basicSalary) || isNaN(basicSalary)){
+       document.write("Invalid input");
+   }
+   else{
+      basicSalary *= 1; // basicSlaary = basicSalary*1 
+      if(basicSalary > 10000){
+         var hra = (basicSalary*10)/100;
+         var ta = (basicSalary*5)/100;
+         var da = (basicSalary*3)/100;
+         var gs = basicSalary + hra + ta + da;
+         document.write("<br>HRA : "+hra);
+         document.write("<br>TA : "+ta);
+         document.write("<br>DA : "+da);
+         document.write("<br>Gross Salary : "+gs);
+      }
+      else{
+         var hra = (basicSalary*5)/100;
+         var ta = (basicSalary*3)/100;
+         var gs = basicSalary + hra + ta;
+         document.write("<br>HRA : "+hra);
+         document.write("<br>TA : "+ta);
+         document.write("<br>Gross Salary : "+gs);
+      }
+   }
+   /*
+   if((basicSalary!=null) &&(basicSalary!='')&&(isNaN(basicSalary)!=true)){
+      document.write("Valid input");
+   }
+   else{
+       document.write("Invalid input");
+   }
+   */
+
+</script>
+
+
+
+
