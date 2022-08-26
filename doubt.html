@@ -1,0 +1,22 @@
+<script>
+    /*
+    var x = 20;
+    var y = "20";
+  
+    document.write(typeof(x)); // number
+    document.write("<br>"+typeof(y)); // string
+    document.write("<br>"+(x==y));
+    document.write("<br>"+(x===y));
+    var x = 5;
+    x+=10
+*/
+var x = null;
+document.write(undefined === null);
+document.write("<br>"+(20+null)); // 20 + 0 -> 20
+document.write("<br>"+(20+undefined)); // --> NaN
+document.write("<br>"+(20+true)); // 20 + 1 --> 21
+document.write("<br>"+(20+false)); // 20 + 0 --> 20
+document.write("<br>"+(20*null)); // 0
+document.write("<br>"+(NaN==NaN)); // NaN -> false
+document.write("<br>"+(20 + NaN));
+</script>
