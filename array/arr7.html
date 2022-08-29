@@ -1,0 +1,15 @@
+<script>
+    /*
+    var x = [10,20,30,40,50];
+    var result = x.slice(1,4); // 1 to 3
+    document.write(result);
+    */
+   var x = [10,20,"A","B",30,"C",50,true];
+   var sum = 0;
+   for(element of x){
+     if(typeof(element) == "number"){
+         sum += element;
+     }
+   }
+   document.write("total : "+sum);
+</script>
