@@ -1,0 +1,27 @@
+<script>
+    /*
+      callback
+      error callback
+      callback hell
+    */
+   function addition(a,b,callback){
+     if(a > 0 && b > 0){
+         var result = a + b;
+         document.write("<br>Addition : "+result);
+         callback(null,result);
+     }
+     else
+       callback(new Error("Negative number error"),null);
+   }
+   var x = prompt("Enter 1st number") * 1;
+   var y = prompt("Enter 2nd number")*1;
+
+   addition(x,y,function(err,result){
+     if(err){
+        document.write("<br>"+err);  
+     }
+     else{
+         result%2 ? document.write("<br>Odd") : document.write("<br>Even");
+     }
+   });
+</script>

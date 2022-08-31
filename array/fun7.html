@@ -1,0 +1,10 @@
+<script>
+    function f1(callback){
+      document.write('<br>f1-called..<br>');
+      callback();
+    }
+
+    f1(function(){
+        document.write("Callback executed....");
+    });
+</script>

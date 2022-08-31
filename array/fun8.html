@@ -1,0 +1,14 @@
+<script>
+    function operation(a,b,callback){
+       var result = a + b;
+       document.write("Addition : "+result);
+       callback(result);
+    }
+
+    operation(20,11,function(n){
+      if(n%2)
+        document.write("<br>Result is odd");
+      else
+        document.write("<br>Result is even");  
+    });
+</script>

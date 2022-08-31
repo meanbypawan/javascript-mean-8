@@ -1,0 +1,11 @@
+<script>
+    function f1(a){
+      document.write('<br>f1-called..<br>');
+      a();
+    }
+
+    var x = function(){
+        document.write("function as parameter called....");
+    }; 
+    f1(x);
+</script>

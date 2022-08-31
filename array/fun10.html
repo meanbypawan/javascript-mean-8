@@ -1,0 +1,24 @@
+<script>
+    function checkAge(personAge,callback){
+      if(personAge >=18)
+       callback(null);
+      else
+       callback(new Error("Invalid voter.."));  
+    }
+
+    var age = prompt("Enter Age")*1; 
+    checkAge(age,err=>{
+      if(err)
+        document.write("<br>"+err);
+      else{
+          document.write("<br>You can vote");
+      }  
+    });
+    /*
+    var f1 = ()=>{
+        document.write("function executed..");
+    };
+
+    f1();
+   */
+</script>

@@ -1,0 +1,15 @@
+<script>
+    function abc(){
+      document.write("abc called...")
+    }
+    function xyz(){
+      document.write("Xyz-called...");
+      pqr();
+    }
+    function pqr(){
+      abc();
+      document.write("Pqr executed...");
+    }
+
+    xyz();
+</script>
