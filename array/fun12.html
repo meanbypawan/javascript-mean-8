@@ -1,0 +1,37 @@
+<script>
+  /*
+    Customer
+     property :- id,cname,mobile,age,bal
+     behaviour :- withdrawal,deposite,balanceEnq
+    {}
+  */
+  function Customer(id,cname,mobile,age,bal){
+    this.id = id;
+    this.cname = cname;
+    this.mobile = mobile;
+    this.age = age;
+    this.bal = bal;
+
+    this.withdrawal = function(amount){
+      if(amount > this.bal)
+         document.write("<br>Insuffieceint balance");
+      else{
+          this.bal -= amount;
+          document.write('<br>Withdrawal success..');
+      }   
+    }
+    this.deposite = function(amount){
+       this.bal += amount;
+       document.write("<br>Total Balance : "+this.bal);
+    }
+    this.balanceEnquiry = function(){
+        document.write("<br>Current Balance : "+this.bal);
+    }
+  }  
+
+  // obj-> id,cname,mobile,age,bal
+  var obj = new Customer(100,'Rahil','9009111222',21,10000);
+  obj.deposite(5000);
+  obj.withdrawal(1000);
+  obj.balanceEnquiry();
+</script>

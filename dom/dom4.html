@@ -1,0 +1,34 @@
+<html>
+    <body>
+        <center>
+            <img id="main" src="donate.png" width="400px" height="400px"/>
+            <br><br><br><br><br><br>
+            <img onclick="changeImage(1)" id="first" src="jackets.png" width="100px" height="100px"/>&nbsp;&nbsp;&nbsp;&nbsp;
+            <img onclick="changeImage(2)" id="second" src="shoe.png" width="100px" height="100px"/>&nbsp;&nbsp;&nbsp;&nbsp;
+            <img onclick="changeImage(3)" id="third" src="v.png" width="100px" height="100px"/>
+        </center>
+        <script>
+            function changeImage(n){
+               var mainImage = document.getElementById("main");
+               var firstImage = document.getElementById("first");
+               var secondImage = document.getElementById("second");
+               var thirdImage = document.getElementById("third");
+               if(n == 1){
+                  var temp = mainImage.src;
+                  mainImage.src = firstImage.src;
+                  firstImage.src = temp;
+               }
+               else if(n == 2){
+                  var temp = mainImage.src;
+                  mainImage.src = secondImage.src;
+                  secondImage.src = temp;
+               }
+               else if(n==3){
+                 var temp = mainImage.src;
+                  mainImage.src = thirdImage.src;
+                  thirdImage.src = temp;
+               }
+            }
+        </script>
+    </body>
+</html>

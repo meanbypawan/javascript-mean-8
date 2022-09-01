@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <style>
+            #left{
+                width: 100px;
+                float: left;
+                margin-top: 20px;
+            }
+            #right{
+                width: 100px;
+                float: right;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <img id="main" src="donate.png" width="100%" height="400px"/>
+            <div id="left">
+                <button onclick="slideImage('<')"> < </button>
+            </div>
+            <div id="right">
+                <button onclick="slideImage('>')"> > </button>
+            </div>
+        </center>
+        <script>
+             var imageArray = ["donate.png","jackets.png","shoe.png","v.png"];
+              var index = 0;
+              function slideImage(symbol){
+                 var mainImage = document.getElementById("main");
+                 if(symbol == '>'){
+                    if(index>=3)
+                      index = -1; 
+                    index++;  
+                    mainImage.src = imageArray[index];
+                 }
+                 else if(symbol == '<'){
+                    if(index==0)
+                      index = 4; 
+                    index--;
+                    mainImage.src = imageArray[index];
+                 }
+
+              }
+              setInterval(() => {
+                  slideImage('>');
+              }, 5000);
+        </script>
+</body>
+</html>

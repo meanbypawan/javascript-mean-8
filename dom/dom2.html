@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <center>
+            <img id="main" src="donate.png" width="200px" height="200px"/>
+            <br><br>
+            <button onclick="increaseSize()">+</button>
+            <button onclick="decreaseSize()">-</button>
+        </center>
+        <script>
+            function increaseSize(){
+              var mainImage = document.getElementById("main");
+              mainImage.width += 20;
+              mainImage.height += 20;
+            }
+            function decreaseSize(){
+              var mainImage = document.getElementById("main");
+              mainImage.width -= 20;
+              mainImage.height -= 20;
+            }
+        </script>
+    </body>
+</html>

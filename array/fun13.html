@@ -1,0 +1,31 @@
+<script>
+    /*
+    Message
+      behaviour :- m1(), m2(), m3()
+    class Message{
+        m1(){}
+        m2(){}
+        m3(){}
+    }
+    */
+    function Message(){
+        this.m1 = function(){
+            document.write("<br>GM...");
+        }
+        this.m2 = function(){
+            document.write('<br>GE...');
+        }
+        this.m3 = function(){
+            wish();
+            document.write("<br>GN....");
+        }
+        this.wish = function(){
+            document.write("<br>Hello Friends...");
+        }
+    }
+    var obj = new Message();
+    obj.m1();
+    obj.m2();
+    obj.m3();
+    //obj.wish();
+</script>

@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <center>
+            <img id="main" src="donate.png" width="200px" height="200px"/>
+            <br><br>
+            <button onclick="changeImage(1)">+</button>
+            <button onclick="changeImage(0)">-</button>
+        </center>
+        <script>
+            function changeImage(n){
+               var mainImage = document.getElementById("main");
+               if(n){
+                  mainImage.width += 20;
+                  mainImage.height += 20;
+               } 
+               else{
+                  mainImage.width -= 20;
+                  mainImage.height -= 20;
+               }
+            }
+        </script>
+    </body>
+</html>
