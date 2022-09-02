@@ -1,0 +1,19 @@
+<script>
+   function addition(a,b,callback){
+       if(a>=0 && b >=0){
+         var c = a + b;
+         callback(null,c);
+       }
+       else
+        callback(new Error("Negative Number Error"),null);
+   }
+
+   var n1 = prompt("Enter a number...")*1;
+   var n2 = prompt("Enter another number")*1;
+   addition(n1,n2,(err,result)=>{
+      if(err)
+        document.write(err);
+      else
+        document.write("Result : "+result);  
+   });
+</script>

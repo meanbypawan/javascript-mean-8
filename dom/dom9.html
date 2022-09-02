@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <input type="password" id="password"/>
+        <br>
+        <span onclick="showHide()" id="span">Show password</span>
+        <script>
+            function showHide(){
+               var inputObject = document.getElementById("password");
+               var spanObject = document.getElementById("span");
+               if(spanObject.innerText == 'Show password'){
+                   inputObject.type="text";
+                   spanObject.innerHTML = "Hide password";
+               }     
+               else if(spanObject.innerText == "Hide password"){
+                   inputObject.type = "password";
+                   spanObject.innerHTML = "Show password";
+               }
+            }
+        </script>
+    </body>
+</html>

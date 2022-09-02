@@ -1,0 +1,77 @@
+<script>
+    // JSON
+    /*
+       JSON-Array  --> [{key:value},{}]
+       JSON-Object --> {key:[{},{}]}
+    */
+    var productList = [
+        {
+            "id": 1,
+            "name": 'Laptop',
+            "description": 'Dell i3',
+            "price": 70000,
+            category:[
+                {
+                    categoryId: 100,
+                    categoryName: 'Electronics'
+                }
+            ]
+        },
+        {
+            id: 2,
+            name: 'body Lotion',
+            description: 'Dell i3',
+            price: 70000,
+            category:[
+                {
+                    categoryId: 101,
+                    categoryName: 'Cosmatics'
+                }
+            ]
+        },
+        {
+            id: 3,
+            name: 'Peter England jeans',
+            description: 'Dell i3',
+            price: 70000,
+            category:[
+                {
+                    categoryId: 103,
+                    categoryName: 'Garments'
+                }
+            ]
+        },
+        {
+            id: 5,
+            name: 'Keyboard',
+            description: 'intell',
+            price: 70000,
+            category:[
+                {
+                    categoryId: 104,
+                    categoryName: ['Primary Electronics','Secondary Electronics-2'],
+                    
+                }
+            ]
+        }
+    ];
+    document.write("<table border='1' width='100%''>");
+        document.write("<tr>");
+        document.write("<td>Id</td>");
+        document.write("<td>Name</td>");
+        document.write("<td>Category</td>");
+        document.write("<td>Price</td>");
+        document.write("<td>Description</td>");
+        document.write("</tr>");
+        for(var index=0; index<productList.length; index++){
+            var product = productList[index];
+            document.write("<tr>");
+            document.write("<td>"+product.id+"</td>");
+            document.write("<td>"+product.name+"</td>");
+            document.write("<td>"+product.category[0].categoryName[1]+"</td>");
+            document.write("<td>"+product.price+"</td>");
+            document.write("<td>"+product.description+"</td>");
+            document.write("</tr>");
+        }
+    document.write("</table>");
+</script>

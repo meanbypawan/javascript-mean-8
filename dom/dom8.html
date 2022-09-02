@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <style>
+            input{
+                width: 100%;
+                height: 50px;
+            }
+            #result{
+                height: 400px;
+                background-color: black;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <input id="data" onkeyup="showData()" type="text"/><br>
+        <div onmouseout="changeDiv(2)" onmouseover="changeDiv(1)" id="result"></div>
+        <script>
+            function changeDiv(n){
+                var divObject  = document.getElementById("result");
+                if(n==1){
+                divObject.style.backgroundColor = 'red';
+                divObject.style.color = 'black';
+                }
+                else if(n==2){
+                 divObject.style.backgroundColor = 'black';
+                divObject.style.color = 'white';
+                    
+                }
+            }
+            function showData(){
+               var data = document.getElementById("data").value;
+               var divObject = document.getElementById("result");
+               
+               divObject.innerHTML = data;
+            }
+        </script>
+    </body>
+</html>
