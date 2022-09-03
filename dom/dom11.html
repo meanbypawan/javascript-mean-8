@@ -1,0 +1,174 @@
+<html>
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+      </head>
+      <body>
+         <div class="container">
+           <form class="mt-5">  
+            <div class="form-group">
+               <label>Username</label>
+               <input onkeyup="validateUsername()" type="text" id="username" class="form-control"/>
+               <small id="usernameError"></small>
+               <script>
+                   document.getElementById("username").focus();
+               </script>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input onblur="setFocus(this)" onkeyup="validatePassword()" type="password" id="password" class="form-control"/>
+                <small id="passwordError"></small> 
+            </div>
+            <div class="form-group">
+                <label>Mobile</label>
+                <input onkeyup="validateMobile()" type="text" id="mobile" class="form-control"/>
+                <small id="mobileError"></small> 
+            </div>
+            <div class="form-group">
+                <label>Experience</label>
+                <select onchange = "validateExperience()" id="experience" class="form-control">
+                    <option value="0">Select experience</option>
+                    <option value="1">Fresher</option>
+                    <option value="2">1-2 year</option>
+                    <option value="3">2-5 year</option>
+                    <option value="4">5-10 year</option>
+                    <option value="5">above 10 year</option>
+                </select>
+                <small id="experienceError"></small>
+            </div>
+            <div class="form-group">
+                <label>Gender</label><br>
+                Male<input onchange="validateGender()" type="radio" id="male" name="gender"/>
+                Female<input onchange="validateGender()" type="radio" id="female" name="gender"/>
+                <br><small id="genderError"></small>
+            </div>
+            <div class="form-group">
+                <button onclick="return validateData()" type="submit" class="btn btn-primary">Register</button>
+            </div>
+           </form> 
+           <script>
+               function setFocus(currentObject){
+                  if(currentObject.id == "password")
+                    if(!validatePassword())
+                        currentObject.focus();
+               }
+               function validateGender(){
+                   var status = true;
+                   var male = document.getElementById("male").checked;
+                   var female = document.getElementById("female").checked;
+                   var genderError = document.getElementById("genderError");
+                   if(male == false && female == false)
+                    {
+                        genderError.innerHTML = "please select gender";
+                        status  = false;
+                        genderError.style.color = "red";
+                    }
+                    else
+                      genderError.innerHTML = "";
+                   return status;
+               }
+               function validateExperience(){
+                   var status = true;
+                   var exp = document.getElementById("experience").value;
+                   var expError = document.getElementById("experienceError");
+
+                   if(exp == "0"){
+                       status = false;
+                       expError.innerHTML = "please select experience";
+                       expError.style.color = "red";
+                   }
+                   else
+                     expError.innerHTML = "";
+                   return status;
+               }
+               function validateMobile(){
+                   var status  = true;
+                   var mobile = document.getElementById("mobile").value;
+                   var mobileError = document.getElementById("mobileError");
+                   mobile = mobile.trim();
+                   if(mobile.length == 0){
+                       status = false;
+                       mobileError.innerHTML = "Mobile is required";
+                       mobileError.style.color = "red";
+                   }
+                   else if(mobile.length != 10){
+                       status = false;
+                       mobileError.innerHTML = "Mobile must have 10 digit";
+                       mobileError.style.color = "red";
+                   }
+                   else if(isNaN(mobile)){
+                       status = false;
+                       mobileError.innerHTML = "Only digit allowed";
+                       mobileError.style.color = "red";
+                   }
+                   else
+                     mobileError.innerHTML = "";
+                   return status;
+                }
+               function validateUsername(){
+                  var status = true;
+                  var username = document.getElementById("username").value;
+                  var usernameError = document.getElementById("usernameError");
+                  username  = username.trim();
+                  if(username.length ==0){
+                      status = false;
+                      usernameError.innerHTML = "Username required";
+                      usernameError.style.color = "red";
+                  }
+                  else
+                    usernameError.innerHTML = "";
+                  return status;  
+               }
+               function validatePassword(){
+                  var status = true;
+                  var password = document.getElementById("password").value;
+                  var passwordError = document.getElementById("passwordError");
+                  if(password.length == 0){
+                      status = false;
+                      passwordError.innerHTML = "please enter password";
+                      passwordError.style.color = "red";
+                  }
+                  else if(password.length < 6 || password.length > 10){
+                      status = false;
+                      passwordError.innerHTML = "password should be 6 to 10 letter long";
+                      passwordError.style.color = "red";
+                  }
+                  else 
+                    passwordError.innerHTML = "";
+                  return status;  
+
+                  
+               }
+               function validateData(){
+                var status  = true;
+                if(!validateUsername())
+                  status = false;
+                if(!validatePassword())
+                  status = false;
+                if(!validateMobile())
+                  status = false;
+                if(!validateExperience())
+                  status = false
+                if(!validateGender())
+                 status = false;  
+                return status;         
+                /*  
+                  if(validateUsername() && validatePassword() && validateMobile() && validateExperience())
+                    return true;
+                  else
+                    return false;
+                  */    
+               }
+           </script>
+         </div>
+      </body>
+</html>
+
+
+
+
