@@ -48,10 +48,55 @@
                 <br><small id="genderError"></small>
             </div>
             <div class="form-group">
+              <label>Profile pic</label>
+              <input id="profile" type="file"  onchange="checkImage()"/>
+              <br><small id="fileError"></small>
+            </div>
+            <div class="form-group">
+              <lable>skill</lable>
+              <br>
+              Java <input onchange="validateSkill()" id="java" type="checkbox" value="java"/>
+              Angular <input onchange="validateSkill()" id="angular" type="checkbox" value="angular"/>
+              React <input onchange="validateSkill()" id="react" type="checkbox" value="react"/>
+              <br>
+              <small id="skillError"></small>
+            </div>
+            <div class="form-group">
                 <button onclick="return validateData()" type="submit" class="btn btn-primary">Register</button>
             </div>
            </form> 
            <script>
+               function validateSkill(){
+                 var status = true;
+                 var java = document.getElementById("java").checked;
+                 var angular = document.getElementById("angular").checked;
+                 var react = document.getElementById("react").checked;
+                 var skillError = document.getElementById("skillError");
+                 if(angular == false && java == false && react == false){
+                   status= false;
+                   skillError.innerHTML = "Select atleast one skill";
+                   skillError.style.color = "red"; 
+                 }
+                 else
+                   skillError.innerHTML = "";
+                 return status;
+               }
+               function checkImage(){
+                 var status = true; 
+                 var imageObj = document.getElementById("profile");
+                 var fileError = document.getElementById("fileError");
+                 var imagePath = imageObj.value;
+                 // c://document/micky.png
+                 var index = imagePath.lastIndexOf(".");
+                 var fileExtenstion = imagePath.substring(index);
+                 if(fileExtenstion != ".png"){
+                    status = false;
+                    fileError.innerHTML = "Only png is allowed";
+                    fileError.style.color = "red";
+                 }
+                 else
+                   fileError.innerHTML = "";
+               }
                function setFocus(currentObject){
                   if(currentObject.id == "password")
                     if(!validatePassword())
@@ -156,6 +201,10 @@
                   status = false
                 if(!validateGender())
                  status = false;  
+                if(!checkImage())
+                  status = false; 
+                if(!validateSkill())
+                  status = false;  
                 return status;         
                 /*  
                   if(validateUsername() && validatePassword() && validateMobile() && validateExperience())

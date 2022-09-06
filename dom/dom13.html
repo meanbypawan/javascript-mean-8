@@ -1,0 +1,66 @@
+<html>
+    <body>
+        <button onclick="getTableData()">Red-blue</button>
+        <br><br>
+        <table id="data" border="1" width="100%">
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Mobile</td>
+                <td>Age</td>
+                <td>Address</td>
+            </tr>
+            <tr>
+                <td>100</td>
+                <td>Rahil</td>
+                <td>900911222</td>
+                <td>25</td>
+                <td>Palasiya, Indore</td>
+            </tr>
+            <tr>
+                <td>101</td>
+                <td>Rahil</td>
+                <td>900911222</td>
+                <td>25</td>
+                <td>Palasiya, Indore</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Rahil</td>
+                <td>900911222</td>
+                <td>25</td>
+                <td>Palasiya, Indore</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>Rahil</td>
+                <td>900911222</td>
+                <td>25</td>
+                <td>Palasiya, Indore</td>
+            </tr>
+            <tr>
+                <td>104</td>
+                <td>Rahil</td>
+                <td>900911222</td>
+                <td>25</td>
+                <td>Palasiya, Indore</td>
+            </tr>
+        </table>
+        <script>
+            function getTableData(){
+                var tableObject =  document.getElementById("data");
+                var rowArray = tableObject.rows;
+                // rowArray = [<tr>,<tr>......]
+
+                for(var index=1; index<rowArray.length; index++){
+                    // columnArray = [<td>,<td>]
+                    var coloumArray = rowArray[index].cells;
+                    for(var colIndex = 0; colIndex<coloumArray.length; colIndex++){
+                        document.write(coloumArray[colIndex].outerText+" ")
+                    }
+                    document.write("<br>");
+                }
+            }
+        </script>
+    </body>
+</html>
