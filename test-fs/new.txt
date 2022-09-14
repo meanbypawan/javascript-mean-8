@@ -1,0 +1,4 @@
+Node.Js is single threaded.
+Node.Js is javascript runtime envionrment
+Node.Js is most suitable to develop io intensice application
+Node.Js use synchronous and asynchornous library both.
